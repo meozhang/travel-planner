@@ -1,19 +1,33 @@
-body {
+html, body {
   min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   /* Iridescent animated background with yellow tones */
   background: linear-gradient(120deg, #f9e79f 0%, #b6e0fe 20%, #e0c3fc 50%, #fff7ae 80%, #f5f7fa 100%);
   background-size: 200% 200%;
   animation: iridescent-flow 12s ease-in-out infinite;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .main-layout {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
+  min-width: 100vw;
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .map-side {
@@ -152,4 +166,9 @@ body {
 }
 .read-the-docs {
   color: #888;
+}
+
+/* Accessibility: ensure all text is readable on light backgrounds */
+select, option, label, h1, h2, h3, h4, h5, h6, p, ul, li {
+  color: #232323;
 }
