@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import InteractiveMap from './InteractiveMap.jsx';
 
 const countries = [
   'Japan',
@@ -46,30 +47,41 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState('');
 
   return (
-    <div className="app-container">
-      <h1>Travel Planner</h1>
-      <label htmlFor="country-select">Select a country:</label>
-      <select
-        id="country-select"
-        value={selectedCountry}
-        onChange={e => setSelectedCountry(e.target.value)}
-      >
-        <option value="">-- Choose a country --</option>
-        {countries.map(country => (
-          <option key={country} value={country}>{country}</option>
-        ))}
-      </select>
-
-      {selectedCountry && (
-        <div className="travel-plan">
-          <h2>Travel Plan for {selectedCountry}</h2>
-          <ul>
-            {mockPlans[selectedCountry].map((item, idx) => (
-              <li key={idx}>{item}</li>
+    <div className="main-layout">
+      <div className="map-side">
+        <InteractiveMap
+          countries={countries}
+          selectedCountry={selectedCountry}
+          onSelectCountry={setSelectedCountry}
+        />
+      </div>
+      <div className="content-side">
+        <div className="app-container">
+          <h1>Travel Planner</h1>
+          <label htmlFor="country-select">Select a country:</label>
+          <select
+            id="country-select"
+            value={selectedCountry}
+            onChange={e => setSelectedCountry(e.target.value)}
+          >
+            <option value="">-- Choose a country --</option>
+            {countries.map(country => (
+              <option key={country} value={country}>{country}</option>
             ))}
-          </ul>
+          </select>
+
+          {selectedCountry && (
+            <div className="travel-plan">
+              <h2>Travel Plan for {selectedCountry}</h2>
+              <ul>
+                {mockPlans[selectedCountry].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
