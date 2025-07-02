@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import InteractiveMap from './InteractiveMap.jsx';
+import RealWorldMap from './RealWorldMap.jsx';
 
 const countries = [
   'Japan',
@@ -49,11 +49,7 @@ function App() {
   return (
     <div className="main-layout">
       <div className="map-side">
-        <InteractiveMap
-          countries={countries}
-          selectedCountry={selectedCountry}
-          onSelectCountry={setSelectedCountry}
-        />
+        <RealWorldMap onCountrySelect={setSelectedCountry} />
       </div>
       <div className="content-side">
         <div className="app-container">

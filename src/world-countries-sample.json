@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "ADMIN": "Japan" },
+      "geometry": { "type": "Polygon", "coordinates": [[[139.0, 35.0],[140.0, 35.0],[140.0, 36.0],[139.0, 36.0],[139.0, 35.0]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "ADMIN": "Italy" },
+      "geometry": { "type": "Polygon", "coordinates": [[[12.0, 41.0],[13.0, 41.0],[13.0, 42.0],[12.0, 42.0],[12.0, 41.0]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "ADMIN": "Australia" },
+      "geometry": { "type": "Polygon", "coordinates": [[[133.0, -25.0],[134.0, -25.0],[134.0, -24.0],[133.0, -24.0],[133.0, -25.0]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "ADMIN": "Canada" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-100.0, 60.0],[-99.0, 60.0],[-99.0, 61.0],[-100.0, 61.0],[-100.0, 60.0]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "ADMIN": "Brazil" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-47.0, -15.0],[-46.0, -15.0],[-46.0, -14.0],[-47.0, -14.0],[-47.0, -15.0]]] }
+    }
+  ]
+}
