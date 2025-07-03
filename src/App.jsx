@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import RealWorldMap from './RealWorldMap.jsx';
+import FigmaButton from './FigmaButton.jsx';
 
 const countries = [
   'Japan',
@@ -46,6 +47,11 @@ const mockPlans = {
 function App() {
   const [selectedCountry, setSelectedCountry] = useState('');
 
+  function handleSurprise() {
+    const random = countries[Math.floor(Math.random() * countries.length)];
+    setSelectedCountry(random);
+  }
+
   return (
     <div className="main-layout">
       <div className="map-side">
@@ -54,17 +60,21 @@ function App() {
       <div className="content-side">
         <div className="app-container">
           <h1>Travel Planner</h1>
-          <label htmlFor="country-select">Select a country:</label>
-          <select
-            id="country-select"
-            value={selectedCountry}
-            onChange={e => setSelectedCountry(e.target.value)}
-          >
-            <option value="">-- Choose a country --</option>
-            {countries.map(country => (
-              <option key={country} value={country}>{country}</option>
-            ))}
-          </select>
+
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5em' }}>
+            <label htmlFor="country-select" style={{ marginRight: '0.7em' }}>Select a country:</label>
+            <select
+              id="country-select"
+              value={selectedCountry}
+              onChange={e => setSelectedCountry(e.target.value)}
+            >
+              <option value="">-- Choose a country --</option>
+              {countries.map(country => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
+            <FigmaButton onClick={handleSurprise}>Surprise me</FigmaButton>
+          </div>
 
           {selectedCountry && (
             <div className="travel-plan">

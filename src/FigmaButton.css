@@ -1,0 +1,26 @@
+.figma-btn {
+  background: linear-gradient(90deg, #6C63FF 0%, #48C6EF 100%);
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7em 1.6em;
+  box-shadow: 0 2px 8px 0 rgba(80, 80, 120, 0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  outline: none;
+  margin-left: 1em;
+  display: inline-block;
+}
+.figma-btn:hover, .figma-btn:focus {
+  background: linear-gradient(90deg, #48C6EF 0%, #6C63FF 100%);
+  box-shadow: 0 4px 16px 0 rgba(80, 80, 120, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+.figma-btn:active {
+  background: linear-gradient(90deg, #5a54d1 0%, #3ea6c9 100%);
+  box-shadow: 0 2px 8px 0 rgba(80, 80, 120, 0.10);
+  transform: scale(0.98);
+}
